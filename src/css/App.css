@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box; }
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex; }
+
+.app {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.options {
+  display: flex;
+  align-items: center; }
+
+.option-wrap {
+  display: flex;
+  flex-direction: column; }
+
+.adjust-wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.timer-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.toggles {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+/*# sourceMappingURL=App.css.map */
