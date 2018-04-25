@@ -6,11 +6,17 @@
 
 .app {
   margin: auto;
-  width: 50vw;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 676px) {
+  .app {
+    width: 90%;
+  }
 }
 
 .options {

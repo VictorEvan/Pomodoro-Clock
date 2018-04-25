@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
   font-family: 'Roboto';
-  color: #FFF; }
+  color: #FFF;
+  text-align: center; }
 
 #root {
   background-color: #408DFF; }
@@ -17,6 +18,15 @@ button {
   width: 4rem;
   text-align: center; }
 
+button:hover {
+  background: #FFF;
+  color: #408DFF;
+  cursor: pointer; }
+
+button:active {
+  background: none;
+  color: #FFF; }
+
 #root {
   height: 100vh;
   width: 100vw;
@@ -24,12 +34,15 @@ button {
 
 .app {
   margin: auto;
-  width: 50vw;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
 
+@media (max-width: 676px) {
+  .app {
+    width: 90%; } }
 .options {
   display: flex;
   align-items: center; }

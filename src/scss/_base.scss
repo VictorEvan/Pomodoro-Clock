@@ -2,6 +2,7 @@
   box-sizing: border-box;
   font-family: 'Roboto';
   color: #FFF;
+  text-align: center;
 }
 
 #root {
@@ -18,4 +19,15 @@ button {
   height: 2rem;
   width: 4rem;
   text-align: center;
+}
+
+button:hover {
+  background: #FFF;
+  color: #408DFF;
+  cursor: pointer;
+}
+
+button:active {
+  background: none;
+  color: #FFF;
 }
