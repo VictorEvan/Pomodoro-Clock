@@ -23,10 +23,18 @@ class App extends Component {
       isCountingDown: !this.state.isCountingDown,
     });
     if (!this.state.isCountingDown) {
-      console.log(this.state.isCountingDown);
-      this.interval = setInterval(this.sessionInterval,1000);
+      // implement accurate timer 
+      let start = new Date().getTime(), elapsed = '0.0';
+      this.interval = setInterval(()=>{
+        let time = new Date().getTime() - start;
+        elapsed = Math.floor(time / 100) / 10;
+        // everytime rounded elapsed is equal to elapsed - 1 second has passed
+        if (Math.round(elapsed) === elapsed) {
+          elapsed += '.0';
+          this.sessionInterval();
+        }
+      },100);
     } else if (this.state.isCountingDown) {
-      console.log(this.state.isCountingDown);
       clearInterval(this.interval);
     }
   }
@@ -38,9 +46,8 @@ class App extends Component {
     }, () => {
       if (this.state.sessionMillis === 0) {
         clearInterval(this.interval);
-        const sound = document.querySelector('#beep');
-        sound.currentTime = 0;
-        sound.play();
+        this.sound.currentTime = 0;
+        this.sound.play();
         document.querySelector('#beep').play();
         this.setState({
           isOutputtingSession: false,
@@ -59,9 +66,8 @@ class App extends Component {
     }, () => {
       if (this.state.breakMillis === 0) {
         clearInterval(this.interval);
-        const sound = document.querySelector('#beep');
-        sound.currentTime = 0;
-        sound.play();
+        this.sound.currentTime = 0;
+        this.sound.play();
         this.setState({
           isOutputtingSession: true,
           breakMillis: this.getMillis(this.state.sessionLength)
@@ -73,6 +79,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+    this.sound = document.querySelector('#beep');
     this.setState({
       sessionOutput: this.getTime(this.state.sessionMillis),
       breakOutput: this.getTime(this.state.breakMillis)
@@ -100,6 +107,8 @@ class App extends Component {
   }
 
   reset = () => {
+    this.sound.pause();
+    this.sound.currentTime = 0;
     if (this.state.isCountingDown) {
       clearInterval(this.interval);
     }
