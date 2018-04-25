@@ -8,12 +8,12 @@ const LengthDisplay = props => (
       <button 
         onClick={()=>{props.decrement(props.type)}}
         id={`${props.type}-decrement`}
-      ></button>
+      >-</button>
       <h3 id={`${props.type}-length`}>{props.length}</h3>
       <button 
         onClick={()=>{props.increment(props.type)}}
         id={`${props.type}-increment`}
-      ></button>
+      >+</button>
     </div>
   </div>
 )

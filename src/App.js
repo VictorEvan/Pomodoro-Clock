@@ -187,6 +187,7 @@ class App extends Component {
         <Toggles
           toggleCountdown={this.toggleCountdown}
           reset={this.reset}
+          isCountingDown={this.state.isCountingDown}
         />
         <audio id="beep">
         <source src="https://freesound.org/data/previews/182/182351_1405956-lq.ogg" type="audio/ogg"/>

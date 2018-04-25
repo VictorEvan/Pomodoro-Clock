@@ -6,7 +6,11 @@ const Toggles = props => (
     <button 
       id="start_stop"
       onClick={props.toggleCountdown}
-    >+||</button>
+    >
+      {props.isCountingDown ?
+        "Stop" : "Start"
+      }
+    </button>
     <button 
       id="reset"
       onClick={props.reset}
@@ -16,7 +20,8 @@ const Toggles = props => (
 
 Toggles.propTypes = {
   toggleCountdown: PropTypes.func.isRequired,
-  reset: PropTypes.func.isRequired
+  reset: PropTypes.func.isRequired,
+  isCountingDown: PropTypes.bool.isRequired
 }
 
 export default Toggles;
