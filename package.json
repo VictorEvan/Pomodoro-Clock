@@ -2,6 +2,7 @@
   "name": "pomodoro-clock",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://victorevan.github.io/Pomodoro-Clock",
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
